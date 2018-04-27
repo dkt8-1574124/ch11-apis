@@ -16,11 +16,12 @@ base_uri <- "https://api.github.com"
 # (FYI: this is where we keep the book code and master exercise sets!)
 resource <- "/orgs/info201/repos"
 
+response <- GET(paste0(base_uri, resource))
 # Send a GET request to this endpoint (the `base_uri`` followed by `resource`)
 body <- content(response, "text")
 
 # Extract the "text" of the response usin the `content` function
-body <- GET(paste0(base_uri, resource))
+#body <- GET(paste0(base_uri, resource))
 
 # Convert the body from JSON into a data frame
 info_repos <- fromJSON(body)
